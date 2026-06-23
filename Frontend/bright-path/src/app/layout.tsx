@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'BrightPath' }],
   manifest: '/manifest.json',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/Assets/Ellipse 23 (2).png',
     apple: '/apple-icon.ico',
   },
   openGraph: {
