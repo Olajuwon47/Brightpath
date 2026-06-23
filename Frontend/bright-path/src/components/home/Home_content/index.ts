@@ -1,0 +1,3 @@
+export {
+    sectionContents
+} from './page'
