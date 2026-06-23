@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'BrightPath - Empowering Schools and Students',
     description:
       'Promoting schools, showcasing talents, and creating positive, educative content for the community.',
-    url: 'https://www.BrightPath.com',
+    url: 'Frontend/bright-path/public/Assets/Ellipse 23 (2).png',
     siteName: 'BrightPath',
     images: [
       {
