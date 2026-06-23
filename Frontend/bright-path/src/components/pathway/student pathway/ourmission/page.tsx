@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 {/* Mission */}
 const missionData = [
@@ -42,15 +42,15 @@ const TEXT_CONTENT = {
   ],
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
+  visible: (i = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.3,
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   }),
 };

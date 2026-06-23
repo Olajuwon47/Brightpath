@@ -108,8 +108,9 @@ export default function Subscription() {
       if (!res.ok) throw new Error("Subscription failed. Please try again.");
       setSubscribed(true);
       setEmail("");
-    } catch (err: any) {
-      setError(err.message || "An unexpected error occurred.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
+      setError(message || "An unexpected error occurred.");
     } finally {
       setLoading(false);
     }

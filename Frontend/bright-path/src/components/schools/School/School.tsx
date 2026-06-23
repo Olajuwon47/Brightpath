@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 // Sample departments with a few starter courses (you can import this if external)
@@ -371,12 +372,11 @@ const CourseCatalog = () => {
                           <h2 className="font-bold text-base text-gray-900 leading-snug">{course.title}</h2>
               
                           <div className="rounded-lg overflow-hidden">
-                            <img
+                            <Image
                               src={course.thumbnail}
                               alt={course.title}
                               width={300}
                               height={180}
-                              loading="lazy"
                               className="w-full h-36 object-cover"
                             />
                           </div>

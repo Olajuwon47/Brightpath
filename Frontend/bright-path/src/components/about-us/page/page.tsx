@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 import {
   TeamSection,
@@ -19,15 +19,15 @@ const TEXT_CONTENT = {
     "Lorem ipsum dolor sit amet. Aut explicabo minima non internos voluptas sed quos eaque qui rerum nihil et deleniti nulla 33 galisum galisum. Quo internos consequatur non dolore quaerat rem internosLorem ipsum dolor sit amet. Aut explicabo minima non internos voluptas sed quos eaque qui rerum nihil et deleniti nulla 33 galisum galisum. Quo internos consequatur non dolore quaerat rem internosLorem ipsum dolor sit amet. Aut explicabo minima non internos voluptas sed quos eaque qui rerum nihil et deleniti nulla 33 galisum galisum. Quo internos consequatur non dolore quaerat rem",
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
+  visible: (i = 0) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.3,
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   }),
 };

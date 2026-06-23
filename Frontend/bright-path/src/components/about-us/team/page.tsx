@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 import { ReactNode } from "react";
 
 type SocialLink = {
@@ -98,11 +99,12 @@ export default function LeadershipTeam() {
               key={member.name}
               className="overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="aspect-square overflow-hidden bg-muted">
-                <img
+              <div className="relative aspect-square overflow-hidden bg-muted">
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
 
