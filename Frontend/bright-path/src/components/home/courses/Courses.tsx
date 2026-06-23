@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { FaStar, FaRegBookmark, FaBookmark } from 'react-icons/fa';
 
 const pageContent = {
@@ -121,7 +122,7 @@ const renderStars = (rating: number) => {
   );
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
@@ -129,7 +130,7 @@ const cardVariants = {
     transition: {
       delay: i * 0.15,
       duration: 0.5,
-      ease: 'easeOut',
+      ease: 'easeOut' as const,
     },
   }),
 };
@@ -176,7 +177,7 @@ export default function UpdatedCourses() {
       <h3 className="font-semibold text-lg mt-2">{course.title}</h3>
       <Image src={course.image} alt={course.title} width={500} height={300} className="w-full h-40 object-cover mt-2" />
       <div className="p-4 space-y-2">
-        <p className="font-bold px-2 text-white bg-gradient-to-r from-green-900 via-lime-600 to-lime-400 w-fit rounded-sm">{course.price}</p>
+        <p className="font-bold px-2 text-white bg-linear-to-r from-green-900 via-lime-600 to-lime-400 w-fit rounded-sm">{course.price}</p>
         <div className="flex items-center justify-between gap-2 text-sm text-gray-600">
           <span>{course.duration}</span>
           <span>{course.enrollment} enrolled</span>
@@ -202,7 +203,7 @@ export default function UpdatedCourses() {
       <section>
         <div className="flex justify-between items-center mb-6">
           <div className="p-7 text-4xl font-bold">{pageContent.latest.title}</div>
-          <Link href={pageContent.latest.link} className="bg-lime-50 hover:bg-gradient-to-r from-lime-100 to-green-50 transition-all duration-300 ease-in-out text-sm font-medium text-green-700 p-2 rounded-sm flex items-center gap-1">
+          <Link href={pageContent.latest.link} className="bg-lime-50 hover:bg-linear-to-r from-lime-100 to-green-50 transition-all duration-300 ease-in-out text-sm font-medium text-green-700 p-2 rounded-sm flex items-center gap-1">
             {pageContent.latest.button}
             <span className="text-xl ml-1">→</span>
           </Link>
@@ -216,7 +217,7 @@ export default function UpdatedCourses() {
       <section>
         <div className="flex justify-between items-center mb-6">
           <div className="p-7 text-4xl font-bold">{pageContent.popular.title}</div>
-          <Link href={pageContent.popular.link} className="bg-lime-50 hover:bg-gradient-to-r from-lime-100 to-green-50 transition-all duration-300 ease-in-out text-sm font-medium text-green-700 p-2 rounded-sm flex items-center gap-1">
+          <Link href={pageContent.popular.link} className="bg-lime-50 hover:bg-linear-to-r from-lime-100 to-green-50 transition-all duration-300 ease-in-out text-sm font-medium text-green-700 p-2 rounded-sm flex items-center gap-1">
             {pageContent.popular.button}
             <span className="text-xl ml-1">→</span>
           </Link>
@@ -269,7 +270,7 @@ export default function UpdatedCourses() {
           <p>high-income skills for today&#39;s digital world?</p>
           <p>Join BrightPath as an Instructor and earn.</p>
         </div>
-        <button className="bg-gradient-to-r from-green-900 via-lime-600 to-lime-400 text-white px-6 py-2 rounded-md hover:brightness-105 transition">
+        <button className="bg-linear-to-r from-green-900 via-lime-600 to-lime-400 text-white px-6 py-2 rounded-md hover:brightness-105 transition">
           {pageContent.instructor.button}
         </button>
       </motion.div>
@@ -335,7 +336,7 @@ export default function UpdatedCourses() {
           <p>Direct access to pre-trained, AI-assessed,</p>
           <p>job-ready talent.</p>
         </div>
-        <button className="bg-gradient-to-r from-green-900 via-lime-600 to-lime-400 text-white px-6 py-2 rounded-md hover:brightness-105 transition">
+        <button className="bg-linear-to-r from-green-900 via-lime-600 to-lime-400 text-white px-6 py-2 rounded-md hover:brightness-105 transition">
           {pageContent.hire.button}
         </button>
       </motion.div>
